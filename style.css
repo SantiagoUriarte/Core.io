@@ -13,3 +13,26 @@ body {
     width: 100vw;
 }
 
+.start-div {
+    float: right;
+}
+
+.length-div {
+    float: left;
+}
+
+#yt-link {
+    width: 350px;
+}
+#yt-player {
+    margin: 10px 0 10px 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .start-div {
+        float: left;
+    } 
+    .length-div {
+        position: absolute;
+    }
+}

@@ -1,7 +1,7 @@
 //Global variables
-var yt_link = 'LXDAu8DnALw';
+var yt_link = 'VVIMzUTqkFo';
 var start_time = 0;
-var end_time = 1000;
+var end_time = 60;
 
 
 //get yt_link
