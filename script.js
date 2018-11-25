@@ -1,7 +1,7 @@
 //Global variables
 var yt_link;
-var start_time;
-var end_time;
+var start_time = 0;
+var end_time = 20;
 var window_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 if(window_width < 768) {
   window_width = '200';
