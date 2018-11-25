@@ -1,5 +1,5 @@
 //Global variables
-console.log('ver: 1.3');
+console.log('ver: 1.4');
 var yt_link;
 var start_time = 0;
 var end_time = 20;
