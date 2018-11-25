@@ -3,28 +3,41 @@ html {
     overflow: scroll;
     overflow-x: hidden;
 }
+
 ::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
 }
 
 /* Global Styles */
-body { 
+body {
     background: #2B3A42;
 }
 
-.footer {
-    background: #3F5866;
+.button:hover {
+    background-color: #FF8F00;
+    border-color: #FF8F00;
+    color: #F0F0DF;
 }
 
 /* header */
 .header {
     padding-top: 30px;
 }
+
 .header .title {
     color: #F0F0DF;
-    font-size: 4rem;
+    font-size: 5rem;
+    letter-spacing: 5px;
 }
+
+.header .subtitle {
+    color: #FF8F00;
+    font-size: 15px;
+}
+
 /* section yt-searh */
 #yt-search {
     margin-bottom: 0;
@@ -87,6 +100,7 @@ body {
 /* footer */
 .footer {
     padding: 35px 0 35px 0;
+    background: #3F5866;
 }
 
 footer .subtitle {

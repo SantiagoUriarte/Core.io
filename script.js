@@ -1,4 +1,5 @@
 //Global variables
+console.log('ver: 1.1');
 var yt_link;
 var start_time = 0;
 var end_time = 20;
@@ -9,7 +10,7 @@ if(window_width < 768) {
 else {
   window_width = '720';
 }
-console.log(window_width);
+console.log('width: ' + window_width);
 
 //get yt_link
 function getYtLink() {
