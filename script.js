@@ -1,11 +1,13 @@
 //Global variables
-console.log('ver: 1.1');
+console.log('ver: 1.2');
 var yt_link;
 var start_time = 0;
 var end_time = 20;
 var window_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+var window_height = '390';
 if(window_width < 768) {
-  window_width = '200';
+  window_width = '260';
+  window_height = '300';
 }
 else {
   window_width = '720';
