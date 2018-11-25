@@ -2,7 +2,14 @@
 var yt_link;
 var start_time;
 var end_time;
-var window_width = Math.min(640, Math.max(document.documentElement.clientWidth, window.innerWidth || 0) - 2);
+var window_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+if(window_width < 768) {
+  window_width = '400';
+}
+else {
+  window_width = '720';
+}
+
 
 //get yt_link
 function getYtLink() {
@@ -52,7 +59,7 @@ var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '390',
-    width: window_width.toString(),
+    width: window_width,
     videoId: yt_link,
     events: {
       'onReady': onPlayerReady,
