@@ -1,12 +1,12 @@
 //Global variables
-console.log('ver: 1.2');
+console.log('ver: 1.3');
 var yt_link;
 var start_time = 0;
 var end_time = 20;
 var window_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 var window_height = '390';
 if(window_width < 768) {
-  window_width = '260';
+  window_width = '280';
   window_height = '300';
 }
 else {
@@ -61,7 +61,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
-    height: '390',
+    window_height: window_height,
     width: window_width,
     videoId: yt_link,
     events: {
