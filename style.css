@@ -8,31 +8,101 @@ html {
     background: transparent;  /* optional: just make scrollbar invisible */
 }
 
-body {
-    height: 100vh;
-    width: 100vw;
+/* Global Styles */
+body { 
+    background: #2B3A42;
 }
 
-.start-div {
-    float: right;
+.footer {
+    background: #3F5866;
 }
 
-.length-div {
-    float: left;
+/* header */
+.header {
+    padding-top: 30px;
+}
+.header .title {
+    color: #F0F0DF;
+    font-size: 4rem;
+}
+/* section yt-searh */
+#yt-search {
+    margin-bottom: 0;
+    margin-top: -20px;
 }
 
-#yt-link {
-    width: 350px;
+#yt-search .container div {
+    width: 600px;
+    margin: auto;
 }
+
+#yt-search .subtitle {
+    color: #F0F0DF;
+}
+
+#yt-search .input {
+    margin-top: -15px;
+    display: inline-block;
+    width: 80%;
+}
+
+#yt-search .button {
+    margin-top: -15px;
+}
+
+/* section yt-player */
 #yt-player {
-    margin: 10px 0 10px 0;
+    margin-top: -75px;
 }
+
+/* section yt-settings */
+#yt-settings {
+    margin: auto;
+    margin-top: -90px;
+    width: 50%;
+    color: #F0F0DF;
+}
+
+#yt-settings .subtitle {
+    color: #F0F0DF;
+}
+
+#yt-settings .columns {
+    margin-top: -25px;
+}
+
+#yt-settings .container {
+    width: 100%;
+}
+
+
+#yt-settings label {
+    margin-right: 5px;
+}
+
+#yt-settings button.button {
+    margin-top: 0px;
+}
+
+/* footer */
+.footer {
+    padding: 35px 0 35px 0;
+}
+
+footer .subtitle {
+    color: #F0F0DF;
+}
+
 
 @media only screen and (max-width: 768px) {
-    .start-div {
-        float: left;
-    } 
-    .length-div {
-        position: absolute;
+    #yt-search .container div {
+        width: 100%;
+        margin: auto;
+    }
+
+    #yt-search .input {
+        margin-top: -15px;
+        display: inline-block;
+        width: 70%;
     }
 }

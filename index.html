@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Core.io</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container has-text-centered">
+            <h1 class="title">Core<span style="color: #FF8F00;">.</span>io</h1>
+        </div>
+    </header>
+
+    <section id="yt-search" class="section">
+        <div class="container has-text-centered">
+            <div>
+                <h2 class="subtitle is-size-6">Enter youtube link for video you want to play</h2>
+                <input type="text" id="yt-link" class="input" placeholder="https:youtube.com/video" value="https://www.youtube.com/watch?v=4Tp-IyL1lm8">
+                <button class="button" onClick="updateAll();">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="yt-player" class="section">
+        <div class="container has-text-centered">
+            <div id="player" frameborder="0" style="border: solid 2px #FF8F00"></div>
+        </div>
+    </section>
+
+    <section id="yt-settings" class="section">
+        <div class="container has-text-centered">
+            <h2 class="subtitle is-size-6">Enter start time in format 0:00 and enter how many seconds you want video to
+                play
+            </h2>
+            <div class="columns">
+                <div class="column">
+                    <label for="start">start time</label>
+                    <input class="input" type="text" id="start" placeholder="0:00" value="0:00" />
+                </div>
+                <div class="column">
+                    <label for="end">length</label>
+                    <input class="input" type="text" id="end" placeholder="20" value="20" />
+                </div>
+            </div>
+            <button class="button" onClick="updateAll();">Update</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container has-text-centered">
+            <h2 class="subtitle is-size-6">Santiago Uriarte &copy 2018</h2>
+        </div>
+    </footer>
     <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-  </head>
-  <body>
-      <div id="landing-page">
-        <header id="title" class="hero">
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                    <h1 class="title">Core.io</h1>
-                </div>
-            </div>
-        </header>
+</body>
 
-        <section id="link">
-            <div class="container has-text-centered">
-                <input id="yt-link" type="text" placeholder="Enter youtube link" value="https://www.youtube.com/watch?v=VVIMzUTqkFo">
-                <label for="yt-link"><button id="search" onclick="getYtLink();" class="button">Search</button></label>   
-            </div>
-        </section>
-
-        <section id="yt-player">
-            <div class="container has-text-centered">
-                <p><div id="player"></div></p>
-            </div>
-        </section>
-
-        <section id="settings">
-            <div class="container">
-                <div class="columns">
-                    <div class="column">
-                        <div class="start-div">
-                            <label for="start">Start Time</label>
-                            <input type="text" id="start" placeholder="0:00" value="0">
-                        </div>
-                    </div>
-
-                    <div class="column">
-                        <div class="length-div">
-                            <label for="end">Length</label>
-                            <input type="text" id="end" placeholder="30" value="60">
-                            <label for="end">sec</label>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="container has-text-centered" style="margin-top: 10px;">
-                    <button class="button" onclick="getSettings();">Update</button>
-                </div>
-            </div>
-        </section>
-    </div>
-  </body>
 </html>

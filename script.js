@@ -1,8 +1,9 @@
 //Global variables
-var yt_link = 'VVIMzUTqkFo';
-var start_time = 0;
-var end_time = 60;
-
+var yt_link;
+var start_time;
+var end_time;
+var window_width = Math.min(640, Math.max(document.documentElement.clientWidth, window.innerWidth || 0) - 2);
+console.log("width: " + window_width);
 
 //get yt_link
 function getYtLink() {
@@ -13,21 +14,30 @@ function getYtLink() {
     else {
       yt_link = full_link[0];
     }
-    player.loadVideoById(yt_link, start_time, "Large");
-    console.log("link: " + yt_link.split("v="));
 }
 
-//get settings
+//get time_settings
 function getSettings() {
   let minutes = parseInt(document.getElementById('start').value.split(":")[0]);
   let seconds = parseInt(document.getElementById('start').value.split(":")[1]);
 
-
   start_time = (minutes * 60) + seconds;
-  console.log("min: " + minutes);
-  end_time = parseInt(document.getElementById('end').value, 10) + 1;
-  console.log("sec: " + seconds);
-  player.loadVideoById(yt_link, start_time, "Large");
+  if(document.getElementById('end').value.toLowerCase() == "end") {
+    end_time = 1000000;
+  }
+  else {
+    end_time = start_time + parseInt(document.getElementById('end').value, 10) + 1;
+  }
+}
+
+//update_all_settings 
+function updateAll() {
+  getYtLink();
+  getSettings();
+  player.loadVideoById({'videoId': yt_link,
+               'startSeconds': start_time,
+               'endSeconds': end_time,
+               'suggestedQuality': 'large'});
 }
 
 //This code loads the IFrame Player API code asynchronously.
@@ -43,7 +53,7 @@ var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '390',
-    width: '640',
+    width: window_width,
     videoId: yt_link,
     events: {
       'onReady': onPlayerReady,
@@ -60,26 +70,20 @@ function onPlayerReady(event) {
 //The API calls this function when the player's state changes.
 //The function indicates that when playing a video (state=1),
 //the player should play for six seconds and then stop.
-var done = false;
+
 function onPlayerStateChange(event) {
-  console.log("in change");
-  console.log("start: " + start_time);
-  console.log("end: " + end_time);
-  if (event.data == YT.PlayerState.PLAYING && !done) {
-    setTimeout(startLoop, end_time * 1000);
+  if (event.data == YT.PlayerState.ENDED) {
+    restartVideo();
   }
 }
-function stopVideo() {
-  player.stopVideo();
-}
-function pauseVideo() {
-  player.pauseVideo();
-}
+
 function playVideo() {
   player.playVideo();
 }
-function startLoop() {
-  done = true;
+
+function restartVideo() {
   player.seekTo(start_time);
-  setTimeout(startLoop, end_time * 1000);
+  player.playVideo();
 }
+
+updateAll();
