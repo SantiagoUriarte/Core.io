@@ -4,11 +4,12 @@ var start_time;
 var end_time;
 var window_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 if(window_width < 768) {
-  window_width = '280';
+  window_width = '200';
 }
 else {
   window_width = '720';
 }
+console.log(window_width);
 
 //get yt_link
 function getYtLink() {
