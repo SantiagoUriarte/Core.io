@@ -3,7 +3,6 @@ var yt_link;
 var start_time;
 var end_time;
 var window_width = Math.min(640, Math.max(document.documentElement.clientWidth, window.innerWidth || 0) - 2);
-console.log("width: " + window_width);
 
 //get yt_link
 function getYtLink() {
@@ -53,7 +52,7 @@ var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '390',
-    width: window_width,
+    width: window_width.toString(),
     videoId: yt_link,
     events: {
       'onReady': onPlayerReady,
