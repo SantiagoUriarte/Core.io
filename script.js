@@ -1,5 +1,5 @@
 //Global variables
-console.log('ver: 1.4');
+console.log('ver: 1.41');
 var yt_link;
 var start_time = 0;
 var end_time = 20;
@@ -18,7 +18,7 @@ console.log('width: ' + window_width);
 function getYtLink() {
     let full_link = document.getElementById('yt-link').value.split("v=");
     if(full_link.length > 1 && full_link[0].slice(0, 4) == "http") {
-      yt_link = full_link[1];
+      yt_link = full_link[1].split("&")[0];
     }
     else {
       yt_link = full_link[0];

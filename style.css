@@ -103,6 +103,10 @@ body {
     background: #3F5866;
 }
 
+.footer .container {
+    min-height: calc(100vh - 70vh);
+}
+
 footer .subtitle {
     color: #F0F0DF;
 }
